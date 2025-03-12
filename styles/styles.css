@@ -51,7 +51,7 @@ body {
 
 .front {
     background: none; /* Elimina el fondo degradado */
-    background-image: url('/assett/fondo100.jpg'); /* Ruta de la imagen */
+    background-image: url('../assett/fondo100.jpg'); /* Ruta de la imagen */
     background-size: cover; /* Ajusta la imagen para cubrir la tarjeta */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita repeticiones */
@@ -80,7 +80,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/assett/fondo97.jpg'); /* Ruta de la imagen */
+    background-image: url('../assett/fondo97.jpg'); /* Ruta de la imagen */
     background-size: cover;
     background-position: center;
     opacity: 0.5; /* Ajusta este valor para cambiar la opacidad */
@@ -106,7 +106,7 @@ h2 {
     display: inline-block;
     width: 200px;
     height: 200px;
-    background-image: url('/asset/fondo15.png');
+    background-image: url('../asset/fondo15.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
