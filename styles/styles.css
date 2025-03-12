@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url(''); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #d6eaff;
+}
+
+.card-container {
+    perspective: 1000px;
+}
+
+.card {
+    width: 400px;
+    height: 750px;
+    background: linear-gradient(145deg, #f1ceff, #f781f7);
+    border-radius: 40px;
+    box-shadow: 0 20px 20px rgba(255, 46, 220, 0.2);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 40px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.front {
+    background: none; /* Elimina el fondo degradado */
+    background-image: url('/assett/fondo100.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir la tarjeta */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita repeticiones */
+    border-radius: 40px; /* Mantiene los bordes redondeados */
+}
+
+.back {
+    background: linear-gradient(145deg, #f1ceff, #f781f7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    text-align: center;
+    border-radius: 40px;
+    padding: 20px;
+    color: white;
+    position: relative; /* Necesario para que el pseudo-elemento se posicione correctamente */
+    overflow: hidden; /* Asegura que el pseudo-elemento no se salga del borde de la tarjeta */
+}
+
+.back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assett/fondo97.jpg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Ajusta este valor para cambiar la opacidad */
+    z-index: 1; /* Asegura que el pseudo-elemento esté detrás del contenido de texto */
+    border-radius: 40px;
+}
+
+.back * {
+    position: relative;
+    z-index: 2; /* Coloca el contenido por encima del pseudo-elemento */
+}
+
+
+h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.fifteen {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-image: url('/asset/fondo15.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent;
+    line-height: 80px;
+    text-align: center;
+}
+
+.fifteen::after {
+    content: "15";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(241, 130, 195);
+    font-size: 4rem;
+    font-family: "Great Vibes", cursive;
+}
+
+p {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 10px;
+    
+}
+
+.nombre {
+    font-size: 5rem;
+    color: rgb(241, 130, 195);
+}
+
+.fecha {
+    font-family: "Great Vibes", cursive;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+
+.direc {
+
+    font-size: 3rem;
+    color: #000000;
+    
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: rgb(255, 255, 255);
+    color: #8e44ad;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #b30fc9;
+    color: white;
+}
+
+.map {
+    background-color: white;
+    color: #9b59b6;
+}
+
+.map:hover {
+    background-color: #b30fc9;
+    color: white;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(231, 143, 231, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-box span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #c2199d;
+}
+
+.time-box p {
+    margin: 0;
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+/* Estilos específicos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .card {
+        width: 320px;
+        height: 600px;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .fifteen {
+        width: 150px;
+        height: 150px;
+    }
+
+    .fifteen::after {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    .nombre {
+        font-size: 2.5rem;
+    }
+
+    .fecha {
+        font-size: 1.6rem;
+    }
+
+    .direc {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 280px;
+        height: 500px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .fifteen {
+        width: 120px;
+        height: 120px;
+    }
+
+    .fifteen::after {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    .nombre {
+        font-size: 2.2rem;
+    }
+
+    .fecha {
+        font-size: 1.4rem;
+    }
+
+    .direc {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    
+    
+}
