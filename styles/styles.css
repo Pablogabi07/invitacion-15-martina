@@ -198,7 +198,6 @@ p {
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
-    background: rgba(231, 143, 231, 0.7);
     padding: 10px;
     border-radius: 10px;
     width: fit-content;
@@ -214,7 +213,7 @@ p {
 .time-box span {
     font-size: 30px;
     font-weight: bold;
-    color: #c2199d;
+    color: rgb(233, 92, 202);
 }
 
 .time-box p {
